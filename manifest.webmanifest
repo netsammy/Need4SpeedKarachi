@@ -1,0 +1,39 @@
+{
+  "name": "Need 4 Speed Karachi",
+  "short_name": "N4S Karachi",
+  "description": "An arcade chase racer through the streets of Karachi — Sea View, Shahrah-e-Faisal, II Chundrigar, and the Northern Bypass. Bikes, water tankers, rickshaws, and police pressure.",
+  "start_url": "/Need4SpeedKarachi/",
+  "scope": "/Need4SpeedKarachi/",
+  "display": "standalone",
+  "orientation": "landscape",
+  "background_color": "#0a1320",
+  "theme_color": "#0a1320",
+  "lang": "en-US",
+  "categories": ["games", "entertainment", "racing"],
+  "icons": [
+    {
+      "src": "/Need4SpeedKarachi/icons/app-icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    },
+    {
+      "src": "/Need4SpeedKarachi/icons/app-maskable.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "maskable"
+    },
+    {
+      "src": "/Need4SpeedKarachi/icons/app-icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/Need4SpeedKarachi/icons/app-icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}
