@@ -1,0 +1,28 @@
+<svg width="512" height="512" viewBox="0 0 512 512" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="512" height="512" rx="110" fill="#06101C"/>
+  <rect x="24" y="24" width="464" height="464" rx="98" fill="url(#bg)" stroke="#F59E0B" stroke-opacity="0.35" stroke-width="4"/>
+  <circle cx="392" cy="118" r="42" fill="#FCD34D" fill-opacity="0.9"/>
+  <path d="M54 420L176 252H336L458 420V480H54V420Z" fill="#0C1727"/>
+  <path d="M256 112C310 112 362 126 406 152L392 172C352 149 306 138 256 138C206 138 160 149 120 172L106 152C150 126 202 112 256 112Z" fill="#F59E0B" fill-opacity="0.95"/>
+  <path d="M148 452L228 184H284L364 452H312L256 252L200 452H148Z" fill="#FFF7ED" fill-opacity="0.16"/>
+  <path d="M178 452L238 196H274L334 452H298L256 268L214 452H178Z" fill="#FFF7ED" fill-opacity="0.08"/>
+  <path d="M203 332C214 306 240 288 269 288H314C350 288 381 309 394 341L418 402C424 418 412 436 395 436H128C110 436 98 417 104 400L131 335C143 307 170 288 200 288H203Z" fill="#DC3A2E"/>
+  <path d="M213 274L253 232C267 218 286 210 305 210H350C370 210 390 218 405 232L443 267C455 278 447 298 431 298H194C177 298 169 277 181 266L213 274Z" fill="#C92F25"/>
+  <path d="M250 230H348C364 230 379 236 390 246L414 276H216L232 248C236 238 242 230 250 230Z" fill="#07111F"/>
+  <path d="M260 242H304L287 276H226L239 252C243 245 251 242 260 242Z" fill="#B9DEFF"/>
+  <path d="M313 242H349C363 242 375 246 385 255L406 276H294L313 242Z" fill="#A6D5FF"/>
+  <path d="M158 348H191" stroke="#FFF7ED" stroke-width="8" stroke-linecap="round"/>
+  <path d="M325 348H359" stroke="#F9A8AE" stroke-width="8" stroke-linecap="round"/>
+  <path d="M157 372H366" stroke="#111827" stroke-width="8" stroke-linecap="round"/>
+  <path d="M176 390H345" stroke="#F59E0B" stroke-width="6" stroke-linecap="round"/>
+  <circle cx="190" cy="437" r="38" fill="#111827"/>
+  <circle cx="190" cy="437" r="20" fill="#9FB0C4"/>
+  <circle cx="340" cy="437" r="38" fill="#111827"/>
+  <circle cx="340" cy="437" r="20" fill="#9FB0C4"/>
+  <defs>
+    <linearGradient id="bg" x1="256" y1="24" x2="256" y2="488" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#10233D"/>
+      <stop offset="1" stop-color="#07111F"/>
+    </linearGradient>
+  </defs>
+</svg>
