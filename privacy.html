@@ -3,7 +3,10 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Privacy Policy - Need 4 Speed Karachi</title>
+    <meta http-equiv="Cache-Control" content="no-store, no-cache, must-revalidate" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
+    <title>Need 4 Speed Karachi Privacy Policy</title>
     <style>
       :root {
         color-scheme: dark;
@@ -106,7 +109,7 @@
   <body>
     <main>
       <article class="card">
-        <h1>Privacy Policy</h1>
+        <h1>Need 4 Speed Karachi Privacy Policy</h1>
         <h2>Last updated: May 19, 2026</h2>
 
         <p>
@@ -228,5 +231,18 @@
         </div>
       </article>
     </main>
+    <script>
+      if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.getRegistrations()
+          .then((registrations) => Promise.all(registrations.map((registration) => registration.unregister())))
+          .then(() => {
+            if ('caches' in window) {
+              return caches.keys().then((keys) => Promise.all(keys.map((key) => caches.delete(key))))
+            }
+            return undefined
+          })
+          .catch(() => {})
+      }
+    </script>
   </body>
 </html>
