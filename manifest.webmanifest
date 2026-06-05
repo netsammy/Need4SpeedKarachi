@@ -1,7 +1,7 @@
 {
-  "name": "Need 4 Speed Karachi",
-  "short_name": "N4S Karachi",
-  "description": "An arcade chase racer through the streets of Karachi — Sea View, Shahrah-e-Faisal, II Chundrigar, and the Northern Bypass. Bikes, water tankers, rickshaws, and police pressure.",
+  "name": "Karachi Street Racer: 3D Traffic Chase",
+  "short_name": "Karachi Racer",
+  "description": "An arcade chase racer through the streets of Karachi - Sea View, Shahrah-e-Faisal, II Chundrigar, and the Northern Bypass. Bikes, water tankers, rickshaws, and police pressure.",
   "start_url": "/Need4SpeedKarachi/",
   "scope": "/Need4SpeedKarachi/",
   "display": "standalone",
