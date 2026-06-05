@@ -1,71 +1,76 @@
-const CACHE_NAME = 'need4speedkarachi-v15'
-const APP_SCOPE = new URL(self.registration.scope).pathname
-const SHOULD_DISABLE_SW = ['localhost', '127.0.0.1'].includes(self.location.hostname)
-const APP_ASSETS = [
+const APP_CACHE = 'n4s-karachi-app-v1.6.0'
+const RUNTIME_CACHE = 'n4s-karachi-runtime-v1.6.0'
+const APP_SCOPE = '/Need4SpeedKarachi/'
+const APP_SHELL = [
   APP_SCOPE,
   `${APP_SCOPE}manifest.webmanifest`,
-  `${APP_SCOPE}icons/app-icon.svg`,
-  `${APP_SCOPE}icons/app-maskable.svg`,
+  `${APP_SCOPE}privacy.html`,
   `${APP_SCOPE}icons/app-icon-192.png`,
   `${APP_SCOPE}icons/app-icon-512.png`,
 ]
 
 self.addEventListener('install', (event) => {
-  if (SHOULD_DISABLE_SW) {
-    event.waitUntil(self.skipWaiting())
-    return
-  }
-  event.waitUntil(caches.open(CACHE_NAME).then((cache) => cache.addAll(APP_ASSETS)))
-  self.skipWaiting()
+  event.waitUntil(
+    caches
+      .open(APP_CACHE)
+      .then((cache) => cache.addAll(APP_SHELL))
+      .then(() => self.skipWaiting()),
+  )
 })
 
 self.addEventListener('activate', (event) => {
   event.waitUntil(
-    caches.keys()
+    caches
+      .keys()
       .then((keys) =>
-        Promise.all(keys.filter((key) => SHOULD_DISABLE_SW || key !== CACHE_NAME).map((key) => caches.delete(key))),
+        Promise.all(
+          keys
+            .filter((key) => ![APP_CACHE, RUNTIME_CACHE].includes(key))
+            .map((key) => caches.delete(key)),
+        ),
       )
-      .then(() => self.clients.claim())
-      .then(() => {
-        if (!SHOULD_DISABLE_SW) return undefined
-        return self.registration.unregister().then(() =>
-          self.clients.matchAll({ type: 'window', includeUncontrolled: true }).then((clients) => {
-            clients.forEach((client) => client.navigate(client.url))
-          }),
-        )
-      }),
+      .then(() => self.clients.claim()),
   )
 })
 
 self.addEventListener('fetch', (event) => {
-  if (SHOULD_DISABLE_SW) return
-  if (event.request.method !== 'GET') return
+  const request = event.request
 
-  if (event.request.mode === 'navigate') {
+  if (request.method !== 'GET') {
+    return
+  }
+
+  const url = new URL(request.url)
+  if (url.origin !== self.location.origin || !url.pathname.startsWith(APP_SCOPE)) {
+    return
+  }
+
+  if (request.mode === 'navigate') {
     event.respondWith(
-      fetch(event.request)
+      fetch(request)
         .then((response) => {
-          const responseClone = response.clone()
-          caches.open(CACHE_NAME).then((cache) => cache.put(APP_SCOPE, responseClone))
+          const copy = response.clone()
+          caches.open(APP_CACHE).then((cache) => cache.put(APP_SCOPE, copy))
           return response
         })
-        .catch(() => caches.match(APP_SCOPE) || caches.match(event.request)),
+        .catch(() => caches.match(APP_SCOPE)),
     )
     return
   }
 
   event.respondWith(
-    caches.match(event.request).then((cached) => {
-      const networkFetch = fetch(event.request)
-        .then((response) => {
-          if (!response || response.status !== 200) return response
-          const responseClone = response.clone()
-          caches.open(CACHE_NAME).then((cache) => cache.put(event.request, responseClone))
-          return response
-        })
-        .catch(() => cached || caches.match(APP_SCOPE))
+    caches.match(request).then((cached) => {
+      if (cached) {
+        return cached
+      }
 
-      return cached || networkFetch
+      return fetch(request).then((response) => {
+        if (response.ok) {
+          const copy = response.clone()
+          caches.open(RUNTIME_CACHE).then((cache) => cache.put(request, copy))
+        }
+        return response
+      })
     }),
   )
 })

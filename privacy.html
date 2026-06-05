@@ -3,7 +3,10 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Privacy Policy - Need 4 Speed Karachi</title>
+    <meta http-equiv="Cache-Control" content="no-store, no-cache, must-revalidate" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
+    <title>Karachi Street Racer: 3D Traffic Chase Privacy Policy</title>
     <style>
       :root {
         color-scheme: dark;
@@ -106,16 +109,16 @@
   <body>
     <main>
       <article class="card">
-        <h1>Privacy Policy</h1>
+        <h1>Karachi Street Racer: 3D Traffic Chase Privacy Policy</h1>
         <h2>Last updated: May 19, 2026</h2>
 
         <p>
-          This Privacy Policy explains how Need 4 Speed Karachi handles information when you play the game on Android,
+          This Privacy Policy explains how Karachi Street Racer: 3D Traffic Chase handles information when you play the game on Android,
           Windows, or the web. The game is published by Netsammy.
         </p>
 
         <p class="note">
-          Need 4 Speed Karachi does not require account registration. Game progress, settings, unlocked cars, upgrades,
+          Karachi Street Racer: 3D Traffic Chase does not require account registration. Game progress, settings, unlocked cars, upgrades,
           challenge progress, credits, and local scores are stored on your device unless a platform service requires
           processing for ads, purchases, or app delivery.
         </p>
@@ -143,7 +146,7 @@
 
         <h3>Advertising</h3>
         <p>
-          Need 4 Speed Karachi uses Google AdMob for rewarded ads and interstitial ads. Google and its advertising
+          Karachi Street Racer: 3D Traffic Chase uses Google AdMob for rewarded ads and interstitial ads. Google and its advertising
           partners may process information such as advertising identifiers, IP address, approximate location derived
           from IP address, device information, ad interaction data, diagnostics, and consent signals to deliver,
           measure, and improve ads.
@@ -184,7 +187,7 @@
 
         <h3>Children's Privacy</h3>
         <p>
-          Need 4 Speed Karachi is intended for a general audience but is not directed to children under 13. We do not
+          Karachi Street Racer: 3D Traffic Chase is intended for a general audience but is not directed to children under 13. We do not
           knowingly collect personal information directly from children under 13. If you believe a child has provided
           personal information through the app, contact us and we will review the issue.
         </p>
@@ -228,5 +231,18 @@
         </div>
       </article>
     </main>
+    <script>
+      if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.getRegistrations()
+          .then((registrations) => Promise.all(registrations.map((registration) => registration.unregister())))
+          .then(() => {
+            if ('caches' in window) {
+              return caches.keys().then((keys) => Promise.all(keys.map((key) => caches.delete(key))))
+            }
+            return undefined
+          })
+          .catch(() => {})
+      }
+    </script>
   </body>
 </html>
