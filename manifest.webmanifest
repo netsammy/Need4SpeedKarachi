@@ -5,11 +5,26 @@
   "start_url": "/Need4SpeedKarachi/",
   "scope": "/Need4SpeedKarachi/",
   "display": "standalone",
+  "id": "/Need4SpeedKarachi/",
   "orientation": "landscape",
   "background_color": "#0a1320",
   "theme_color": "#0a1320",
   "lang": "en-US",
   "categories": ["games", "entertainment", "racing"],
+  "screenshots": [
+    {
+      "src": "/Need4SpeedKarachi/screenshots/windows-store-title-1920x1080.png",
+      "sizes": "1920x1080",
+      "type": "image/png",
+      "form_factor": "wide",
+      "label": "Karachi Street Racer"
+    }
+  ],
+  "serviceworker": {
+    "src": "/Need4SpeedKarachi/sw.js",
+    "scope": "/Need4SpeedKarachi/",
+    "type": ""
+  },
   "icons": [
     {
       "src": "/Need4SpeedKarachi/icons/app-icon.svg",
